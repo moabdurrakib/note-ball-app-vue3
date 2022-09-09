@@ -5,7 +5,7 @@ import App from './App.vue'
 import './assets/main.css'
 
 const router = createRouter({
-    history: createWebHistory,
+    history: createWebHistory(),
     routes: []
 })
 
