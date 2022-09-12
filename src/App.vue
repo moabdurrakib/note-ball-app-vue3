@@ -3,3 +3,5 @@
   <router-link to="/stats">Stats</router-link>
   <RouterView />
 </template>
+
+<style></style>
