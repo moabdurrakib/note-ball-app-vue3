@@ -1,7 +1,11 @@
 <template>
-  <router-link to="/">Notes</router-link> |
-  <router-link to="/stats">Stats</router-link>
+  <NavBar />
   <RouterView />
 </template>
+
+<script setup>
+/**import */
+import NavBar from "./components/layouts/NavBar.vue";
+</script>
 
 <style></style>
