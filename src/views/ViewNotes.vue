@@ -10,13 +10,13 @@
       <div class="d-flex jus flex-row-reverse">
         <button
           type="button"
-          class="btn btn-primary text-white bg-success p-2 text-dark bg-opacity-25"
+          class="btn btn-primary text-white bg-light p-2 text-dark bg-opacity-75"
         >
           Add new notes
         </button>
       </div>
     </div>
-    <div class="card" v-for="i in 3" :key="i">
+    <div class="card m-5" v-for="i in 3" :key="i">
       <div class="card-body">
         <p class="card-text">
           Some quick example text to build on the card title and make up the
@@ -24,7 +24,7 @@
         </p>
         <footer class="d-flex justify-content-evenly">
           <a href="#" class="card-link">Edit</a>
-          <a href="#" class="card-link">Delete</a>
+          <a href="#" class="card-link">Deleted</a>
         </footer>
       </div>
     </div>
