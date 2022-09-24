@@ -16,11 +16,10 @@
         </button>
       </div>
     </div>
-    <div class="card m-5" v-for="i in 3" :key="i">
+    <div class="card m-5" v-for="note in notes" :key="note.id">
       <div class="card-body">
         <p class="card-text">
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
+          {{ note.content }}
         </p>
         <footer class="d-flex justify-content-evenly">
           <a href="#" class="card-link">Edit</a>
@@ -30,3 +29,21 @@
     </div>
   </div>
 </template>
+<script setup>
+/* import **/
+import { ref } from "vue";
+
+/**Notes */
+const notes = ref([
+  {
+    id: "id1",
+    content:
+      " Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto nostrum sit iste? Quisquam, minima quia a culpa neque tempora maxime odit perferendis architecto tenetur voluptates non provident? Deserunt optio quae hic, fugiat repudiandae esse possimus, eos eveniet culpa itaque cum nulla natus minima dicta cumque sint dolore obcaecati labore nobi",
+  },
+  {
+    id: "id2",
+    content:
+      " Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto nostrum sit iste? Quisquam, minima quia a culpa neque tempora maxime odit perferendis architecto tenetur voluptates ",
+  },
+]);
+</script>
