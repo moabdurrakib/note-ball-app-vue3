@@ -14,27 +14,19 @@
           type="button"
           class="btn btn-primary text-white bg-light p-2 text-dark bg-opacity-75"
           @click="addNote"
+          @keyup.enter="addNote"
         >
           Add new notes
         </button>
       </div>
     </div>
-    <div class="card m-5" v-for="note in notes" :key="note.id">
-      <div class="card-body">
-        <p class="card-text">
-          {{ note.content }}
-        </p>
-        <footer class="d-flex justify-content-evenly">
-          <a href="#" class="card-link">Edit</a>
-          <a href="#" class="card-link">Deleted</a>
-        </footer>
-      </div>
-    </div>
+    <Note v-for="note in notes" :key="note.id" />
   </div>
 </template>
 <script setup>
 /* import **/
 import { ref } from "vue";
+import Note from "@/components/Notes/Note.vue";
 
 /**Notes */
 const newNote = ref("");
