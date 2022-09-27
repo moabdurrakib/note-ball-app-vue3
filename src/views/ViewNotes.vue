@@ -20,7 +20,12 @@
         </button>
       </div>
     </div>
-    <Note v-for="note in notes" :key="note.id" :note="note" />
+    <Note
+      v-for="note in notes"
+      :key="note.id"
+      :note="note"
+      @deleteClicked="deleteNote"
+    />
   </div>
 </template>
 <script setup>
@@ -56,5 +61,11 @@ const addNote = () => {
   notes.value.unshift(note);
   newNote.value = "";
   newNoteRef.value.focus();
+};
+
+/**dlete Note */
+
+const deleteNote = (iddelete) => {
+  notes.value = notes.value.filter((note) => note.id != iddelete);
 };
 </script>

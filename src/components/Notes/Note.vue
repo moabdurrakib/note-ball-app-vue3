@@ -7,7 +7,9 @@
       <div class="text-end">{{ contentLenth }}</div>
       <footer class="d-flex justify-content-evenly">
         <a href="#" class="card-link">Edit</a>
-        <a href="#" class="card-link">Deleted</a>
+        <a href="#" class="card-link" @click.prevent="handleDeleteClicked"
+          >Deleted</a
+        >
       </footer>
     </div>
   </div>
@@ -23,10 +25,18 @@ const props = defineProps({
   },
 });
 
+/**Emit custom event */
+const emit = defineEmits(["deleteClicked"]);
+
 /**computed */
 const contentLenth = computed(() => {
   let length = props.note.content.length;
   let description = length > 1 ? "characters" : "character";
   return `${length} ${description}`;
 });
+
+/**Handle delete clicked */
+const handleDeleteClicked = () => {
+  emit("deleteClicked", props.note.id);
+};
 </script>
